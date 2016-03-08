@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新闻中心</title>
+    <link rel="stylesheet" href="../static/css/News.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+   
+ <!-- <link rel="shortcut icon" href="../static/css/Notice__css/images/favicon.ico">  -->
+ <!-- <link rel="icon" href="../static/css/Notice__css/images/favicon.ico">  -->
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/Notice__css/styles.css">
+  <script type="text/javascript" src="../static/css/Notice__css/jquery.min.js"></script>
+  <script type="text/javascript" src="../static/css/Notice__css/jsinput.js"></script>
+   
+</head>
+
+<style type="text/css">
+.file-box{ position:relative;width:340px} 
+.txt{ height:22px; border:1px solid #cdcdcd; width:200px;border-right:none;} 
+.btn{ background-color:#FFF; border:1px solid #CDCDCD;height:26px; width:100px;} 
+.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }
+</style>
+
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1">  <div id="ggg01-1-Notice">  </div>  </div>
+              
+              <form enctype="multipart/form-data" method="post" action="">
+              
+              <div id="ggg01-2">
+                 <div id="ggg01-2-Form">
+                 
+                    
+                    <div class="fieldcontainer">
+                    <input type="text" name="searchText" id="searchfield" class="searchfield" placeholder="Keywords..." tabindex="1">
+                    </div> <!-- @end .fieldcontainer -->
+                    
+                    
+                 </div>   
+              </div>
+              
+              <div id="ggg01-3"> 
+                 <div id="ggg01-3-Button">
+                     <input class="buttonNotice" type="submit" value="  搜索  " width="500" name="search">
+                 </div>       
+              </div>
+              
+              </form>
+
+          </div>
+          
+          <div id="ggg02">
+                
+          </div>
+          
+          
+          
+       </div>
+       
+       
+            <div id="hhh">
+            <div id="hhh-content">
+            
+                 
+
+                  <table border="0" width="660">
+                      {% for title,date in newsDict.items %}
+                        <form action="" method="post" enctype="multipart/form-data">
+                        <tr height="50"> <td width="550"><p1><input class="button1" type="submit"    value="{{ title }}" name="news" ></p1></td> <td><p2>{{ date }}</p2></td></tr>
+                        </form>
+                      {% endfor %}
+                  </table>
+
+
+            </div>
+            </div>     
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>

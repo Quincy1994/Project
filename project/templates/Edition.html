@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>管理员 -- 编辑消息</title>
+    <link rel="stylesheet" href="../static/css/Edition.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+function handout() {
+            {
+              if(window.confirm('发布后则不能修改,您确定发布吗?')){
+                 //alert("确定");
+                 return true;
+              }else{
+                 //alert("取消");
+                 return false;
+             }
+            }
+        }
+</script>
+</head>
+
+
+
+<style type="text/css">
+.file-box{ position:relative;width:340px} 
+.txt{ height:22px; border:1px solid #cdcdcd; width:200px;border-right:none;} 
+.btn{ background-color:#FFF; border:1px solid #CDCDCD;height:26px; width:100px;} 
+.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }
+</style>
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1"><a href="{% url 'login' %}"  ><input class="button1" name ="main" type="submit"    value="    " ></a></div>
+              <div id="ggg01-2"><a href="{% url 'Notice' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-3"><a href="{% url 'Projectshow' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-4"><a href="{% url 'News' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-5"><a href="{% url 'Download' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-6"><a href="{% url 'Achievement' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-7"><a href ="{% url 'Leavemessage' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+          </div>
+          
+          
+          <div id="ggg02">
+                
+                <div id="ggg02-Container">
+                
+                     <div id="ggg02-1"><p>欢迎您，{{ user }}</p></div>
+                     <div id="ggg02-2"><a href ="{% url 'ProjectAnalyse' %}" target="_blank"><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-3"><a href="{% url 'CheckSituation' %}" target="_blank"><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-4"><a href="{% url 'MailSend' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+                     <div id="ggg02-5"><a href="{% url 'Edition' %}" target="_blank"><input class="button1" type="button"    value="    " ></a></div>
+                     <form action="" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-6"><input class="button1" type="submit"    value="    "name="logout" ></div></form>
+                
+                </div>
+                
+          </div>
+       </div>
+       
+       
+       
+       
+
+
+            <div id="hhh">
+            <div id="hhh-content">
+            <form id="myproject" enctype="multipart/form-data" method="post" action="">
+            
+            
+            <table border="0" width="800" height="15"></table>
+            
+                       
+            <p>编辑消息：</p>
+            
+            <TABLE border="0" width="800" height="15"></table>
+            
+ <TABLE>
+  <tr>
+				
+        <td width="90">编辑类型:</td><td>
+					     						<select name="type" id="editing_type" style="width:130px" >
+												<option></option>
+					     											     							<option value="公告">公告</option>
+					     											     							<option value="项目展示">项目展示</option>
+					     											     							<option value="新闻">新闻中心</option>
+					     											     							<option value="资源下载">资源下载</option>
+					     											     							<option value="成果展">成果展</option>
+
+					     											     						</select>
+					     		</td>
+                                
+                   
+                                
+				
+  </tr>
+  
+  </TABLE>
+  
+  
+                 <TABLE border="0" width="800" height="15"></table>
+  
+   
+                 <TABLE border="0" width="800" height="45">
+                 
+             
+  <TR>
+    <td width="90">编辑作者:</td><td><input value="" name="author" id="author" style="width:360px;" type="text"> </td>
+    
+
+  </TR>
+  </TABLE>
+ 
+              
+                 <TABLE border="0" width="800" height="45">
+                 
+             
+  <TR>
+    <td width="70">时间:</td><td><input value="" name="time" id="edit_time" style="width:360px;" type="text"> <p1> （ 格式 2010-01-01 ）</p1> </td>
+    
+
+  </TR>
+  </TABLE>
+  
+
+
+<table border="0" width="800" height="10"></table>
+
+
+
+<TABLE border="0" width="800" height="40">
+  <TR>
+    <td width="70">标题:</td><td><input value="" name="title" id="title" style="width:500px;" type="text"> <p1> </p1> </td>
+    
+
+  </TR>
+  </TABLE>
+
+
+
+<table border="0" width="800" height="20"></table>            
+            
+            
+            
+<TABLE border="0" width="800" height="40">
+<TR>
+  <td width="10">
+  发送内容:
+  </td>
+</TR>
+
+
+<TR>
+  
+  <td>
+  <textarea name="content" cols="66" rows="10"></textarea>
+  </td>
+  
+  <td width="800">
+  
+  </td>
+    
+</TR>    
+    
+</TABLE>
+
+
+
+
+<table border="0" width="800" height="28"></table>
+
+            
+<TABLE border="0" width="800" height="45">
+  
+  <tr>
+	    <td width="120">上传图片:</td>
+        <td><div class="file-box"> 
+    
+        <input type='text' name='textfield01' id='textfield01' class='txt' /><input type='button' class='btn' value='浏览...' />
+        <input type="file" name="image" class="file" id="upload_photo" size="28" onChange="document.getElementById('textfield01').value=this.value" />
+   
+         </div></td>
+								
+  </tr>
+                                
+                                
+</TABLE>
+
+
+
+
+<table border="0" width="800" height="10"></table>
+
+            
+<TABLE border="0" width="800" height="45">
+  
+  <tr>
+	    <td width="120">附件:</td>
+        <td><div class="file-box"> 
+    
+        <input type='text' name='textfield02' id='textfield02' class='txt' /><input type='button' class='btn' value='浏览...' />
+        <input type="file" name="attachment" class="file" id="upload_file" size="28" onChange="document.getElementById('textfield02').value=this.value" />
+   
+         </div></td>
+								
+  </tr>
+                                
+                                
+</TABLE>
+            
+            
+      
+
+<table border="0" width="800" height="25"></table>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit"  name="changed" value="1"width="500" onclick="return handout()">&nbsp;&nbsp;&nbsp;提交&nbsp;&nbsp;&nbsp;</button>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="reset" value="    重填    ">
+
+
+
+            </form>
+            </div>
+            </div>     
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>

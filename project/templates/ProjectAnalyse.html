@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>项目分析</title>
+    <link rel="stylesheet" href="../static/css/ProjectAnalyse01.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+   
+ <!-- <link rel="shortcut icon" href="../static/css/Notice__css/images/favicon.ico">  -->
+ <!-- <link rel="icon" href="../static/css/Notice__css/images/favicon.ico">  -->
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/Notice__css/styles.css">
+  <script type="text/javascript" src="../static/css/Notice__css/jquery.min.js"></script>
+  <script type="text/javascript" src="../static/css/Notice__css/jsinput.js"></script>
+   
+</head>
+
+<style type="text/css">
+.file-box{ position:relative;width:340px} 
+.txt{ height:22px; border:1px solid #cdcdcd; width:200px;border-right:none;} 
+.btn{ background-color:#FFF; border:1px solid #CDCDCD;height:26px; width:100px;} 
+.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }
+</style>
+
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1">  <div id="ggg01-1-Notice">  </div>  </div>
+              
+              <form enctype="multipart/form-data" method="post" action="{% url 'ProjectAnalyse' %}">
+              
+              <div id="ggg01-2">
+                 <div id="ggg01-2-Form">
+                 
+                    
+                    <div class="fieldcontainer">
+                    <input type="text" name="searchfield" id="searchfield" class="searchfield" placeholder="Keywords..." tabindex="1">
+                    </div> <!-- @end .fieldcontainer -->
+                    
+                    
+                 </div>   
+              </div>
+              
+              <div id="ggg01-3"> 
+                 <div id="ggg01-3-Button">
+                     <input class="buttonNotice" type="submit" value="  搜索  " width="500" name="search">
+                 </div>       
+              </div>
+              
+              </form>
+              
+              
+              
+              <form enctype="multipart/form-data" method="post" action="{% url 'ProjectAnalyse' %}">
+              
+              <div id="ggg01-4"> 
+              
+              
+                    <TABLE border="0" width="353" height="50">
+                    <TR>
+                       <TD width="125"><p2>选择学院:</p2></TD>
+                       <td>
+					     						<select name="college" id="project_department" style="width:150px" >
+												<option></option>
+					     											     							<option value="思科信息学院">思科信息学院</option>
+					     											     							<option value="教务处">教务处</option>
+					     											     							<option value="新闻学院">新闻学院</option>
+					     											     							<option value="东语学院">东语学院</option>
+					     											     							<option value="英文学院">英文学院</option>
+					     											     							<option value="艺术学院">艺术学院</option>
+					     											     							<option value="经贸学院">经贸学院</option>
+					     											     							<option value="法学院">法学院</option>
+					     											     							<option value="翻译学院">翻译学院</option>
+					     											     							<option value="财经学院">财经学院</option>
+					     											     							<option value="教育学院">教育学院</option>
+					     											     							<option value="政管学院">政管学院</option>
+					     											     							<option value="西语学院">西语学院</option>
+					     											     							<option value="管理学院">管理学院</option>
+					     											     							<option value="商英学院">商英学院</option>
+					     											     							<option value="中文学院">中文学院</option>
+					     											     							<option value="科研处">科研处</option>
+					     											     							<option value="思政学院">思政学院</option>
+					     											     							<option value="学生处">学生处</option>
+					     											     							<option value="实验教学中心">实验教学中心</option>
+					     											     							<option value="团委">团委</option>
+					     											     							<option value="就业指导中心">就业指导中心</option>
+					     											     							<option value="留学生院">留学生院</option>
+					     											     							<option value="财务处">财务处</option>
+					     											     							<option value="商学院">商学院</option>
+					     											     							<option value="会计学院">会计学院</option>
+					     											     							<option value="金融学院">金融学院</option>
+					     											     						</select>
+					     		</td>
+    
+                    </TR>
+                    
+                    <TR height="10"></TR>
+  
+                    <TR>
+                    <TD><p2>选择项目状态:</p2></TD>
+                    <td>
+					     						<select name="p_status" id="project_status" style="width:150px" >
+												<option></option>
+					     											     							<option value="申报待审核">申报待审核</option>
+					     											     							<option value="申报通过">申报通过</option>
+					     											     							<option value="中期待审核">中期待审核</option>
+					     											     							<option value="中期通过">中期通过</option>
+					     											     							<option value="结项待审核">结项待审核</option>
+					     											     							<option value="结项通过">结项通过</option>
+					     			
+					     											     						</select>
+					     		</td>
+    
+                    </TR>
+  
+                 </TABLE> </div>
+              
+              <div id="ggg01-6"> 
+                   <div id="ggg01-3-Button">
+                     <input class="buttonNotice" type="submit" value="  查找  " width="500" name="look">
+                 </div>
+              </div>
+              
+              </form>
+              
+              
+
+          </div>
+          
+          <div id="ggg02">
+                
+          </div>
+          
+          
+          
+       </div>
+       
+       
+            <div id="hhh">
+            <div id="hhh-content">
+            
+                 
+
+                  <table border="0" width="660">
+                      {% for project in projectlist %}
+                      <form action="{% url 'ProjectAnalyse' %}" method="post" enctype="multipart/form-data">
+                      <tr height="50"> <td width="550"><p1><input class="button1" type="submit"    value="{{ project.0 }}" name ="project" ></p1></td> <td><p2>{{ project.1 }}</p2></td></tr>
+                      </form>
+                      {% endfor %}
+
+                      
+                  </table>
+
+
+
+            </div>
+            </div>     
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>

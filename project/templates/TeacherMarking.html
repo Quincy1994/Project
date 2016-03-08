@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>老师评分</title>
+
+<link rel="stylesheet" href="../static/css/TeacherMarking.css">
+
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<link href='../static/css/TeacherMarking__css/css/jquery.tableui.css'  rel="stylesheet" type="text/css"/>
+
+
+<script type="text/javascript" src="../static/css/TeacherMarking__css/js/jquery.js"></script>
+<script type="text/javascript" src="../static/css/TeacherMarking__css/js/jquery.tableui.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".table_solid").tableUI();
+});
+</script>
+
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1"><a href="{% url 'login' %}" ><input class="button1" name ="main" type="submit"    value="    " ></a></div>
+              <div id="ggg01-2"><a href="{% url 'Notice' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-3"><a href="{% url 'Projectshow' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-4"><a href="{% url 'News' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-5"><a href="{% url 'Download' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-6"><a href="{% url 'Achievement' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-7"><a href ="{% url 'Leavemessage' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+          </div>
+          
+          
+          <div id="ggg02">
+                
+                <div id="ggg02-Container">
+                
+                     <div id="ggg02-1"><p>欢迎您，张礼明</p></div>
+                     <form action="TeacherMarking.html" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-2"><input class="button1" type="submit"    value="    " ></div></form>
+                     <form action="TeacherMarking.html" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-3"><input class="button1" type="submit"    value="    " ></div></form>
+                     <form action="TeacherMarking.html" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-4"><input class="button1" type="submit"    value="    " ></div></form>
+                     <form action="TeacherMarking.html" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-5"><input class="button1" type="submit"    value="    " ></div></form>
+                     <form action="TeacherMarking.html" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-6"><input class="button1" type="submit"    value="    " ></div></form>
+                
+                
+                </div>
+                
+          </div>
+       </div>
+       
+       
+       
+       
+            
+            <form id="teacher_marking" enctype="multipart/form-data" method="post" action="TeacherMarking.html">
+            <div id="hhh">
+            
+            
+            <div id="hhh-header">
+               <table border="0" width="800" height="25"></table> 
+               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;老师评分：</p>
+               <table border="0" width="800" height="25"></table>
+            </div>
+            
+            <div id="hhh-content">
+            
+            
+
+<table class="table_solid" border="0" cellspacing="0">
+	<tr>
+		<th>项目名称</th>
+		<th>评分</th>
+		<th>意见</th>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarking_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td width="70"><input value="" name="score_001" id="score_001" style="width:50px;" type="text"></td>
+		<td width="423"><textarea name="opinion_001" id="opinion_001" cols="40" rows="2"></textarea></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarking_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_002" id="score_002" style="width:50px;" type="text"></td>
+		<td><textarea name="opinion_002" id="opinion_002" cols="40" rows="2"></textarea></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarking_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_003" id="score_003" style="width:50px;" type="text"></td>
+		<td><textarea name="opinion_003" id="opinion_003" cols="40" rows="2"></textarea></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarking_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_004" id="score_004" style="width:50px;" type="text"></td>
+		<td><textarea name="opinion_004" id="opinion_004" cols="40" rows="2"></textarea></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarking_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_005" id="score_005" style="width:50px;" type="text"></td>
+		<td><textarea name="opinion_005" id="opinion_005" cols="40" rows="2"></textarea></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarking_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_006" id="score_006" style="width:50px;" type="text"></td>
+		<td><textarea name="opinion_006" id="opinion_006" cols="40" rows="2"></textarea></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarking_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_007" id="score_007" style="width:50px;" type="text"></td>
+		<td><textarea name="opinion_007" id="opinion_007" cols="40" rows="2"></textarea></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarking_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_008" id="score_008" style="width:50px;" type="text"></td>
+		<td><textarea name="opinion_008" id="opinion_008" cols="40" rows="2"></textarea></td>
+	</tr>
+    <tr>
+		<td><a href="./TeacherMarking_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_009" id="score_009" style="width:50px;" type="text"></td>
+		<td><textarea name="opinion_009" id="opinion_009" cols="40" rows="2"></textarea></td>
+	</tr>
+    <tr>
+		<td><a href="./TeacherMarking_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_010" id="score_010" style="width:50px;" type="text"></td>
+		<td><textarea name="opinion_010" id="opinion_010" cols="40" rows="2"></textarea></td>
+	</tr>
+</table>
+
+
+            </div>
+            
+            
+            <table border="0" width="800" height="5"></table>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="submit" value="    提交    " width="500">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="reset" value="    重填    ">
+            
+            
+            </div>     </form>
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>
+
+

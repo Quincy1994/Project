@@ -1,0 +1,181 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>老师 -- 编辑资料</title>
+    <link rel="stylesheet" href="../static/css/Edition__Teacher.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+function handout() {
+            {
+              if(window.confirm('您确定修改您的个人信息吗?')){
+                 //alert("确定");
+                 return true;
+              }else{
+                 //alert("取消");
+                 return false;
+             }
+            }
+        }
+    </script>
+    <script type="text/javascript">
+    function check(){
+            var passwd = document.getElementById("password1").value;
+            var repasswd = document.getElementById("password2").value;
+            if(passwd == repasswd){
+                return true;
+            }else{
+                window.alert("两次输入密码不一致");
+                return false;
+            }
+            }
+    </script>
+</head>
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1"><a href="{% url 'login' %}"><input class="button1" name ="main" type="submit"    value="    " ></a></div>
+              <div id="ggg01-2"><a href="{% url 'Notice' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-3"><a href="{% url 'Projectshow' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-4"><a href="{% url 'News' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-5"><a href="{% url 'Download' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-6"><a href="{% url 'Achievement' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-7"><a href ="{% url 'Leavemessage' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+          </div>
+          
+          
+          <div id="ggg02">
+                
+                <div id="ggg02-Container">
+                
+                     <form action="" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-1"><p>欢迎您,{{ user }}</p></div>
+                     <div id="ggg02-2"><a href="{% url 'TeacherApplyMark' %}" ><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-3"><a href="{% url 'TeacherMidMark' %}" ><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-4"><a href="{% url 'TeacherEndMark' %}" ><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-5"><a href ="{% url 'Edition__Teacher' %}"><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-6"><input class="button0" name="logout" type="submit"    value="    " ></div>
+                    </form>
+                
+                
+                </div>
+                
+          </div>
+          
+          
+       </div>
+       
+            <div id="hhh">
+            <div id="hhh-content">
+            <form id="myproject" enctype="multipart/form-data" method="post" action="">
+            
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;老师 编辑资料 界面：</p>
+            
+            
+                 <TABLE border="0" width="353" height="20"></TABLE>
+            
+            
+                 <TABLE border="0" width="353" height="500">
+  <TR>
+    <TD>姓名:</TD>
+    <TD><input value="{{ t_name }}" name="t_name" id="name" style="width:180px;" type="text"></TD>
+    
+  </TR>
+  
+  <TR>
+    <TD>学工号:</TD>
+    <TD>&nbsp;&nbsp;<p1>{{ user }}</p1></TD>
+    
+  </TR>
+  <TR>
+    <TD>密码:</TD>
+    <TD><input value="{{ pwd }}" name="pwd" id="password1" style="width:180px;" type="password"></TD>
+    
+  </TR>
+  <TR>
+    <TD>密码确认:</TD>
+    <TD><input value="" name="password_2" id="password2" style="width:180px;" type="password" ></TD>
+    
+  </TR>
+  <TR>
+    <TD>学院: </TD>
+    <TD><select value="{{ college }}" name="college" id="department"><option></option><option value="思科信息学院">思科信息学院</option><option value="教务处">教务处</option><option value="新闻学院">新闻学院</option><option value="东语学院">东语学院</option><option value="英文学院">英文学院</option><option value="艺术学院">艺术学院</option><option value="经贸学院">经贸学院</option><option value="法学院">法学院</option><option value="翻译学院">翻译学院</option><option value="财经学院">财经学院</option><option value="教育学院">教育学院</option><option value="政管学院">政管学院</option><option value="西语学院">西语学院</option><option value="管理学院">管理学院</option><option value="商英学院">商英学院</option><option value="中文学院">中文学院</option><option value="科研处">科研处</option><option value="思政学院">思政学院</option><option value="学生处">学生处</option><option value="实验教学中心">实验教学中心</option><option value="团委">团委</option><option value="就业指导中心">就业指导中心</option><option value="留学生院">留学生院</option><option value="财务处">财务处</option><option value="商学院">商学院</option><option value="会计学院">会计学院</option><option value="金融学院">金融学院</option></select>
+</TD>
+    
+  </TR>
+  <TR>
+    <TD>职称: </TD>
+    <TD><select name="title" id="job" value ="{{ title }}">
+		<option></option>
+		<option value="教授">教授</option>
+		<option value="副教授">副教授</option>
+        <option value="讲师">讲师</option>
+        <option value="辅导员">辅导员</option>
+		</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p1>[教师必填]</p1></TD>
+  </TR>
+  
+  <TR>
+    <TD>邮箱:</TD>
+    <TD><input value = "{{ mail }}"name="mail" id="email_address" style="width:180px;" type="text"></TD>
+    
+  </TR>
+  <TR>
+    <TD>联系电话:</TD>
+    <TD><input value= "{{ phone }}"name="phone" id="phone_number" style="width:180px;" type="text"></TD>
+    
+  </TR>
+  
+</TABLE>
+            
+            
+  
+  
+  </TABLE>
+  
+
+
+
+<table border="0" width="800" height="25"></table>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit"  name="submit" value="1"width="500" onclick="return handout() && check()">&nbsp;&nbsp;&nbsp;提交&nbsp;&nbsp;&nbsp;</button>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="reset" value="    重填    ">
+
+
+
+            </form>
+            </div>
+            </div>     
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>

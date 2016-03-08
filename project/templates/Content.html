@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正文内容</title>
+    <link rel="stylesheet" href="../static/css/Content.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+   
+ <!-- <link rel="shortcut icon" href="../static/css/Notice__css/images/favicon.ico">  -->
+ <!-- <link rel="icon" href="../static/css/Notice__css/images/favicon.ico">  -->
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/Notice__css/styles.css">
+  <script type="text/javascript" src="../static/css/Notice__css/jquery.min.js"></script>
+  <script type="text/javascript" src="../static/css/Notice__css/jsinput.js"></script>
+   
+</head>
+
+<style type="text/css">
+.file-box{ position:relative;width:340px} 
+.txt{ height:22px; border:1px solid #cdcdcd; width:200px;border-right:none;} 
+.btn{ background-color:#FFF; border:1px solid #CDCDCD;height:26px; width:100px;} 
+.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }
+</style>
+
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1">  <div id="ggg01-1-Notice">  </div>  </div>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+          </div>
+          
+          <div id="ggg02">
+                
+          </div>
+          
+          
+          
+       </div>
+       
+       
+            <div id="hhh">
+            <div id="hhh-content">
+                 <h1>{{ type }}</h1>
+                 <div id="hhh-content-02">
+                 
+
+                 <p1>{{ title }}</p1>
+                 </br></br>
+                 
+                 
+                 <p4> [&nbsp;作者：{{ author }}&nbsp;；&nbsp;编辑日期：{{ dates }}&nbsp;] </p4>
+                 
+                 
+                 <TABLE border="0" width="353" height="20"></TABLE>
+                 
+                 <p3>{{ content }}</p3>
+                  
+
+                 
+                 
+                 <TABLE border="0" width="353" height="30"></TABLE>
+                 
+                 <div style="text-align:center">
+                 <img src="{{ imagepath }}" />
+                 </div>
+                 
+                 
+                 <TABLE border="0" width="353" height="30"></TABLE>
+                 
+                 <div style="text-align:center">
+                     {% if attachment %}<p4>附件下载：</p4> <p1><a href="{{ attachment }}">{{ attachmentname }}</a></p1>{% endif %}
+                 </div>
+                 
+                 
+                 
+
+
+                 </div>
+            
+            </div>
+            </div>     
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>

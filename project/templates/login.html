@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>主界面</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/layout.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    function disp_alert()
+    {
+        alert(" 学生老师可通过注册后实现登路.\n\n\n 管理员只能登陆和后台修改,不能自行注册.")
+    }
+    </script>
+</head>
+<style>
+p span{
+display: block;
+width:250px;/*对宽度的定义,根据情况修改*/
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}/* FF 下的样式 */
+p{clear:both;}
+p:after{
+content:
+}
+
+</style>
+
+<body>
+	.
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1"><a href="{% url 'login' %}"><input class="button1" name ="main" type="submit"    value="    " ></a></div>
+              <div id="ggg01-2"><a href="{% url 'Notice' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-3"><a href="{% url 'Projectshow' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-4"><a href="{% url 'News' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-5"><a href="{% url 'Download' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-6"><a href="{% url 'Achievement' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-7"><a href ="{% url 'Leavemessage' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+          </div>
+          
+          <div id="ggg02">
+               <form action="" method="post" enctype="multipart/form-data">
+              <div id="ggg02-1"> <label> 登陆 </label> </div>
+              <div id="ggg02-2"><input value="" name="username" id="project_name" style="width:130px;" type="text" class="text1"></div>
+              <div id="ggg02-3"><input value="" name="password" id="project_name" style="width:130px;" type="password" class="text1"></div>
+              <div id="ggg02-4"><input class="button0" type="submit"    value="    " ></div>
+              <div id="ggg02-5">类别:
+				 <select name="variety" style="width:100px;">
+				       <option> </option>
+					   <option value="1">学生</option>
+				 		<option value="2">老师</option>
+						<option value="3">管理员</option>
+				 </select></div>
+              <div id="ggg02-6"><input class="button0" name="register" type="submit"    value="    " ></div>
+              <div id="ggg02-7"><input class="button0" type="button"    value="    " onclick="disp_alert()"  ></div>
+               </form>
+          </div>
+       </div>
+       
+            <div id="hhh">
+                 <div id="hhh01">
+                    <div id="hhh01-1"><a href="{% url 'Achievement' %}" target="_blank"><input class="buttonX" type="submit"    value="    " ></a>
+                    <div id="hhh01-1-1">  思科信息学院成果展  </div></div>
+                    <div id="hhh01-2"><a href="{% url 'Achievement' %}" target="_blank"><input class="buttonX" type="submit"    value="    " ></a>
+                    <div id="hhh01-2-1">  思科信息学院成果展  </div></div>
+                    <div id="hhh01-3"><a href="{% url 'Achievement' %}" target="_blank"><input class="buttonX" type="submit"    value="    " ></a>
+                    <div id="hhh01-3-1">  思科信息学院成果展  </div></div>
+                    <br class="clearfloat"/>  
+                 </div>
+                 <div id="hhh02">
+                    <div id="hhh02-4"><a href="{% url 'Achievement' %}" target="_blank"><input class="buttonX" type="submit"    value="    " ></a>
+                    <div id="hhh02-4-1">  思科信息学院成果展  </div></div>
+                    <div id="hhh02-5"><a href="{% url 'Achievement' %}" target="_blank"><input class="buttonX" type="submit"    value="    " ></a>
+                    <div id="hhh02-5-1">  思科信息学院成果展  </div></div>                    
+                    <br class="clearfloat"/>  
+                 </div>
+                 <div id="hhh03">  
+                    <div id="hhh03-6"><a href="{% url 'Achievement' %}" target="_blank"><input class="buttonX" type="submit"    value="    " ></a>
+                    <div id="hhh03-6-1">  思科信息学院成果展  </div></div>
+                    <br class="clearfloat"/>  
+                 </div>
+            </div>     
+            
+            <div id="iii">
+                 <div id="iii-header">  </div>
+                 <div id="iii01">
+                      <div id="iii01-1">  </div>
+                      <div id="iii01-2">
+                          {% for notice in noticelist %}
+                        <div id="iii01-2-1">
+                           <div id="iii01-2-1-Header"><div id="iii01-2-1-Header-txt"><a href="{% url 'Notice' %}" target="_blank"><p><span>{{ notice.0 }}</span></p></a></div></div>
+                           <div id="iii01-2-1-Content"><div id="iii01-2-1-Content-txt">{{ notice.1 }}</div></div>
+                           <br class="clearfloat"/>  
+                        </div>
+                           {% endfor %}
+                       </div>
+                 
+                 </div>
+                 <div id="iii02">
+                      <div id="iii02-1">  </div>
+                      <div id="iii02-2">
+                          {% for news in newslist %}
+                        <div id="iii02-2-1">  
+                           <div id="iii02-2-1-Header"><div id="iii02-2-1-Header-txt"><a href="{% url 'News' %}" target="_blank"><p><span>{{ news.0 }}</span></p></a></div></div>
+                           <div id="iii02-2-1-Content"><div id="iii02-2-1-Content-txt">{{ news.1 }}</div></div>
+                           <br class="clearfloat"/>  
+                        </div>
+                          {% endfor %}
+                       </div>
+                 
+                 </div>
+            
+            </div>  
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+</body>
+</html>

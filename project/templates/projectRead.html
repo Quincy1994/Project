@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>项目管理</title>
+    <link rel="stylesheet" href="../static/css/ProjectManagement02.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+   
+ <!-- <link rel="shortcut icon" href="../static/css/Notice__css/images/favicon.ico">  -->
+ <!-- <link rel="icon" href="../static/css/Notice__css/images/favicon.ico">  -->
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/Notice__css/styles.css">
+  <script type="text/javascript" src="../static/css/Notice__css/jquery.min.js"></script>
+  <script type="text/javascript" src="../static/css/Notice__css/jsinput.js"></script>
+      <script type="text/javascript">
+        function check(){
+            var textfield = document.getElementById("textfield").value;
+            if (textfield.length == 0){
+                window.alert("未检查到上传文件")
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        </script>
+</head>
+
+<style type="text/css">
+.file-box{ position:relative;width:250px} 
+.txt{ height:22px; border:1px solid #cdcdcd; width:100px;border-right:none;} 
+.btn{ background-color:#FFF; border:1px solid #CDCDCD;height:26px; width:70px;} 
+.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }
+</style>
+
+
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1">  <div id="ggg01-1-Notice">  </div>  </div>
+              
+              
+              
+              <div id="ggg01-2">
+                 <div id="ggg01-2-Form">
+                 
+                    
+                    
+                    
+                 </div>   
+              </div>
+              
+              <div id="ggg01-3"> 
+                 <div id="ggg01-3-Button">
+                    
+                 </div>       
+              </div>
+              
+              
+              <form id="myproject" enctype="multipart/form-data" method="post" action="{% url 'projectRead' %}">
+              <div id="ggg01-4-0"> <p1>申报项目书</p1> </div>
+              <div id="ggg01-4"> 
+              
+              <div class="file-box"> 
+              
+         <TABLE border="0" width="320" height="45">
+  <tr>
+        <td width="50"></td>
+        <td width="200"><input type='text' name='textfield' id='textfield1' class='txt' /><input type='button' class='btn' value='浏览...' />
+        <input type="file" name="fileField" class="file" id="fileField1" size="20" onChange="document.getElementById('textfield1').value=this.value" /></td>
+        
+        <td width="50">
+        <button type="submit"  name="apply" value="{{ project }}" onclick="return check()">&nbsp;上传&nbsp;</button>
+        </td> 
+        
+
+        
+  <tr>   
+  
+          </TABLE>   
+        
+   
+              </div>  
+ 
+              </div>
+              </form>
+              
+              
+              
+              
+              <form id="myproject" enctype="multipart/form-data" method="post" action="{% url 'projectRead' %}">
+              <div id="ggg01-5-0"> <p1>中期材料</p1> </div>
+              <div id="ggg01-5"> 
+              
+              <div class="file-box"> 
+              
+         <TABLE border="0" width="320" height="45">
+  <tr>
+        <td width="50"></td>
+        <td width="200"><input type='text' name='textfield' id='textfield2' class='txt' /><input type='button' class='btn' value='浏览...' />
+        <input type="file" name="fileField" class="file" id="fileField2" size="20" onChange="document.getElementById('textfield2').value=this.value" /></td>
+        
+        <td width="50">
+        <button type="submit"  name="mid" value="{{ project }}"onclick="return check()">&nbsp;上传&nbsp;</button>
+        </td> 
+        
+
+        
+        
+  <tr>   
+  
+          </TABLE>   
+        
+   
+              </div>  
+ 
+              </div>
+              </form>
+              
+              
+              
+              
+              
+              <form id="myproject" enctype="multipart/form-data" method="post" action="{% url 'projectRead' %}">
+              <div id="ggg01-5-0"> <p1>结项材料</p1> </div>
+              <div id="ggg01-5"> 
+              
+              <div class="file-box"> 
+              
+         <TABLE border="0" width="320" height="45">
+  <tr>
+        <td width="50"></td>
+        <td width="200"><input type='text' name='textfield' id='textfield3' class='txt' /><input type='button' class='btn' value='浏览...' />
+        <input type="file" name="fileField" class="file" id="fileField3" size="20" onChange="document.getElementById('textfield3').value=this.value" /></td>
+        
+        <td width="50">
+        <button type="submit"  name="end" value="{{ project }}" onclick="return check()">&nbsp;上传&nbsp;</button>
+        </td> 
+        
+
+        
+        
+  <tr>   
+  
+          </TABLE>   
+        
+   
+              </div>  
+ 
+              </div>
+              </form>
+              
+              
+
+          </div>
+          
+          
+          <div id="ggg02">
+                
+          </div>
+          
+          
+          
+       </div>
+       
+       
+            <div id="hhh">
+            <div id="hhh-content">
+            
+                 
+                  <p1>{{ project }}</p1>
+
+                  <table border="0" width="720">
+                      
+                      <tr height="20"><td></td></tr>
+                      
+                      <tr height="50"> 
+                         <td width="120"><p2>项目负责人：</p2></td>
+                         <td><p3>{{ ProjectContent.0 }}&nbsp;&nbsp;</p3></td>
+                         <td width="120"><p2>指导老师：</p2></td>
+                         <td><p3>{{ ProjectContent.1 }}&nbsp;{{ ProjectContent.2 }}</p3></td>
+                         <td width="200"> </td>
+                      </tr>
+                      
+                   </table>   
+                      
+                      
+                   <table border="0" width="720">    
+                      
+                      <tr height="50"> 
+                         <td width="200"><p2>项目简介：</p2></td>
+                      </tr>
+                      
+                      <tr height="20"> <td><p2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ ProjectContent.3 }}</p2></td></tr>
+                      
+                      <tr height="50"> 
+                         <td width="200"><p2>项目内容：</p2></td>
+                         
+                         <td> </td>
+                      </tr>
+                      
+                  </table>
+                  
+                  
+                  <table border="0" width="720">   
+                  
+                       <tr height="50"> <td></td></tr>
+                  
+                       <tr height="50">
+                            {% if ProjectContent.4 %}<p><a href="{{ ProjectContent.4 }}" target="_blank">点此下载申报项目内容...</a></p>{% endif %}
+                            {% if ProjectContent.5 %}<p><a href="{{ ProjectContent.5 }}"target="_blank">点此下载中期项目内容...</a></p>{% endif %}
+                            {% if ProjectContent.6 %}<p><a href="{{ ProjectContent.6 }}"target="_blank">点此下载结项项目内容...</a></p>{% endif %}
+                       </tr>
+                 
+                  </table>
+                   
+
+            </div>
+            </div>     
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新增项目</title>
+    <link rel="stylesheet" href="../static/css/ProjectApply.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+         function check() {
+            if(window.confirm('一旦提交后不得修改,你确认提交吗?')){
+                 //alert("确定");
+                 return true;
+              }else{
+                 //alert("取消");
+                 return false;
+             }
+         }
+        function addAction() {
+            document.demo.action = "";
+            document.demo.submit();
+        }
+}
+    </script>
+</head>
+
+
+<style type="text/css">
+.file-box{ position:relative;width:340px} 
+.txt{ height:22px; border:1px solid #cdcdcd; width:200px;border-right:none;} 
+.btn{ background-color:#FFF; border:1px solid #CDCDCD;height:26px; width:100px;} 
+.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }
+</style>
+
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1"><a href="{% url 'login' %}" ><input class="button1" name ="main" type="submit"    value="    " ></a></div>
+              <div id="ggg01-2"><a href="{% url 'Notice' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-3"><a href="{% url 'Projectshow' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-4"><a href="{% url 'News' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-5"><a href="{% url 'Download' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-6"><a href="{% url 'Achievement' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-7"><a href ="{% url 'Leavemessage' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+          </div>
+          
+          <div id="ggg02">
+                
+                <div id="ggg02-Container">
+                
+                    <form action="" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-1"><p>欢迎您，{{ user }} </p></div>
+                     <div id="ggg02-2"><a href="{% url 'ProjectApply' %}" ><input class="button1" name ="ProjectApply" type="button"    value="    " ></a></div>
+                     <div id="ggg02-3"><a href="{% url 'ProjectManagement' %}" target="_blank"><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-4"><a href="{% url 'Edition__Student' %}" ><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-5"><input name ="logout" class="button0" type="submit"    value="    " ></div>
+                     </form>
+                </div>
+                
+          </div>
+       </div>
+       
+            <div id="hhh">
+            <div id="hhh-content">
+            <form id="myproject" name="demo" enctype="multipart/form-data" method="post" action="">
+            
+            
+            <TABLE border="0" width="800" height="45">
+<tr><a href="{% url 'check' %}" target="_blank"><input height="45" type="button"  value="checkPDF" name="checkPDF" /></a>(可以让系统自动审阅申报书)</tr>
+  <tr>
+								<td width=100">上传申报书:</td>
+                                <td><div class="file-box"> 
+
+        <input type='text' name='textfield' id='textfield' class='txt' /><input type='button'  value='浏览...' />
+        <input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" /> 
+   
+</div></td>
+								</tr>
+
+                                
+                                
+</TABLE>
+            
+            
+            
+            
+            <p>项目基本信息：</p>
+            
+                 <TABLE border="0" width="800" height="60">
+  <TR>
+    <td width="266">名称:<input value="" name="project_name" id="project_name" style="width:160px;" type="text"value=""></td>
+    <td>单位:
+					     						<select name="project_department" id="project_department" style="width:120px" >
+												<option value=""></option>
+					     											     							<option value="思科信息学院">思科信息学院</option>
+					     											     							<option value="教务处">教务处</option>
+					     											     							<option value="新闻学院">新闻学院</option>
+					     											     							<option value="东语学院">东语学院</option>
+					     											     							<option value="英文学院">英文学院</option>
+					     											     							<option value="艺术学院">艺术学院</option>
+					     											     							<option value="经贸学院">经贸学院</option>
+					     											     							<option value="法学院">法学院</option>
+					     											     							<option value="翻译学院">翻译学院</option>
+					     											     							<option value="财经学院">财经学院</option>
+					     											     							<option value="教育学院">教育学院</option>
+					     											     							<option value="政管学院">政管学院</option>
+					     											     							<option value="西语学院">西语学院</option>
+					     											     							<option value="管理学院">管理学院</option>
+					     											     							<option value="商英学院">商英学院</option>
+					     											     							<option value="中文学院">中文学院</option>
+					     											     							<option value="科研处">科研处</option>
+					     											     							<option value="思政学院">思政学院</option>
+					     											     							<option value="学生处">学生处</option>
+					     											     							<option value="实验教学中心">实验教学中心</option>
+					     											     							<option value="团委">团委</option>
+					     											     							<option value="就业指导中心">就业指导中心</option>
+					     											     							<option value="留学生院">留学生院</option>
+					     											     							<option value="财务处">财务处</option>
+					     											     							<option value="商学院">商学院</option>
+					     											     							<option value="会计学院">会计学院</option>
+					     											     							<option value="金融学院">金融学院</option>
+					     											     						</select>
+					     		</td>
+    <td>批次:<select name="batch" style="width:70px;">
+											<option value=""></option>
+											<option value="2013">2013</option>
+											<option value="2014">2014</option>
+											<option value="2015">2015</option>
+											<option value="2016">2016</option>
+											
+										</select>
+								</td>
+    
+  </TR>
+  
+  
+  
+  <tr>
+						  <td>	
+				 项目类别:
+				 <select name="variety">
+				       <option value=""> </option>
+					   <option value="创新实验项目">创新实验项目</option>
+				 		<option value="创新训练项目">创新训练项目</option>
+						<option value="创业训练项目">创业训练项目</option>
+						<option value="创业实践项目">创业实践项目</option>
+				 </select>
+						  </td>
+					 			
+								<td>
+										类型: <select name="type" style="width:120px">
+											<option value=""></option>
+						  					<option value="文科">文科</option>
+						  					<option value="理科">理科</option>
+										</select>
+								</td>
+								<td>年限:<select name="year" style="width:70px;">
+										<option value=""></option>
+										<option value="1">1</option><option value="2">2</option></select>
+								</td>
+				 
+								</tr>
+                                
+                                
+                                
+    <tr>
+								<td width="30">项目编码:</td>
+                                <td><input value="" name="project_id" id="project_name" style="width:150px;" type="text"></td>
+								</tr>   
+  
+  
+  
+  
+  
+  </TABLE>
+  
+
+
+<table border="0" width="800" height="18"></table>
+
+<p>指导老师基本信息：</p>
+   <TABLE border="0" width="800" height="55">
+  <TR>
+    <td width="266">指导老师1: <input value="" name="t1_name" id="project_name" style="width:150px;" type="text"></td>
+    <td>单位: <select name="t1_department" id="department1" onChange="changedepartment1()"><option value=""></option><option value="思科信息学院">思科信息学院</option><option value="东语学院">东语学院</option><option value="英文学院">英文学院</option><option value="艺术学院">艺术学院</option><option value="实验教学中心">实验教学中心</option><option value="经贸学院">经贸学院</option><option value="法学院">法学院</option><option value="新闻学院">新闻学院</option><option value="翻译学院">翻译学院</option><option value="财经学院">财经学院</option><option value="教育学院">教育学院</option><option value="政管学院">政管学院</option><option value="西语学院">西语学院</option><option value="管理学院">管理学院</option><option value="商英学院">商英学院</option><option value="中文学院">中文学院</option><option value="科研处">科研处</option><option value="教务处">教务处</option><option value="思政学院">思政学院</option><option value="就业指导中心">就业指导中心</option><option value="学生处">学生处</option><option value="留学生院">留学生院</option><option value="团委">团委</option><option value="会计学院">会计学院</option><option value="财务处">财务处</option><option value="金融学院">金融学院</option><option value="商学院">商学院</option></select>
+    </td>
+    
+    <td>
+										职称: <select name="t1_title">
+											<option value=""></option>
+						  					<option value="院长">院长</option>
+						  					<option value="教授">教授</option>
+                                            <option value="副教授">副教授</option>
+                                            <option value="讲师">讲师</option>
+                                            <option value="辅导员">辅导员</option>
+										</select>
+								</td>
+    <td>工号:<input value="" name="t1_id" id="project_name" style="width:150px;" type="text"></td>
+                                
+   
+    </TR>
+    
+    
+    
+    
+    
+    <TR>
+    <td width="266">指导老师2: <input value="" name="t2_name" id="project_name" style="width:150px;" type="text"></td>
+    <td>单位: <select name="t2_department" id="department1" onChange="changedepartment1()"><option value=""></option><option value="思科信息学院">思科信息学院</option><option value="东语学院">东语学院</option><option value="英文学院">英文学院</option><option value="艺术学院">艺术学院</option><option value="实验教学中心">实验教学中心</option><option value="经贸学院">经贸学院</option><option value="法学院">法学院</option><option value="新闻学院">新闻学院</option><option value="翻译学院">翻译学院</option><option value="财经学院">财经学院</option><option value="教育学院">教育学院</option><option value="政管学院">政管学院</option><option value="西语学院">西语学院</option><option value="管理学院">管理学院</option><option value="商英学院">商英学院</option><option value="中文学院">中文学院</option><option value="科研处">科研处</option><option value="教务处">教务处</option><option value="思政学院">思政学院</option><option value="就业指导中心">就业指导中心</option><option value="学生处">学生处</option><option value="留学生院">留学生院</option><option value="团委">团委</option><option value="会计学院">会计学院</option><option value="财务处">财务处</option><option value="金融学院">金融学院</option><option value="商学院">商学院</option></select>
+    </td>
+    
+    <td>
+										职称: <select name="t2_title">
+                                            <option value=""></option>
+											<option value="院长">院长</option>
+						  					<option value="教授">教授</option>
+                                            <option value="副教授">副教授</option>
+                                            <option value="讲师">讲师</option>
+                                            <option value="辅导员">辅导员</option>
+										</select>
+								</td>
+    <td>工号:<input value="" name="t2_id" id="project_name" style="width:150px;" type="text"></td>
+                                
+   
+    </TR>
+    
+    
+    
+</TABLE>
+
+
+
+
+
+<table border="0" width="800" height="18"></table>
+
+<p>学生成员基本信息：</p>
+   <TABLE border="0" width="800" height="80">
+  <TR>
+    <td width="266">负责人姓名: <input value="" name="s1_name" id="project_name" style="width:150px;" type="text"></td>
+    <td>学院: <select name="s1_department"><option value=""></option><option value="思科信息学院">思科信息学院</option><option value="东语学院">东语学院</option><option value="英文学院">英文学院</option><option value="艺术学院">艺术学院</option><option value="实验教学中心">实验教学中心</option><option value="经贸学院">经贸学院</option><option value="法学院">法学院</option><option value="新闻学院">新闻学院</option><option value="翻译学院">翻译学院</option><option value="财经学院">财经学院</option><option value="教育学院">教育学院</option><option value="政管学院">政管学院</option><option value="西语学院">西语学院</option><option value="管理学院">管理学院</option><option value="商英学院">商英学院</option><option value="中文学院">中文学院</option><option value="科研处">科研处</option><option value="教务处">教务处</option><option value="思政学院">思政学院</option><option value="就业指导中心">就业指导中心</option><option value="学生处">学生处</option><option value="留学生院">留学生院</option><option value="团委">团委</option><option value="会计学院">会计学院</option><option value="财务处">财务处</option><option value="金融学院">金融学院</option><option value="商学院">商学院</option></select>
+    </td>
+    
+     <td>学号:<input value="" name="s1_id" id="project_name" style="width:150px;" type="text"></td>
+    
+    
+    
+    <td>
+										年级: <select name="s1_grade">
+											<option value=""></option>
+						  					<option value="2012">2012级</option>
+						  					<option value="2013">2013级</option>
+                                            <option value="2014">2014级</option>
+                                            <option value="2015">2015级</option>
+                                            <option value="2016">2016级</option>
+										</select>
+								</td>
+   
+                                
+   
+    </TR>
+    
+    
+    
+    
+    
+    <TR>
+    <td width="266">成员姓名: <input value="" name="s2_name" id="project_name" style="width:150px;" type="text"></td>
+    <td>学院: <select name="s2_department"><option value=""></option><option value="思科信息学院">思科信息学院</option><option value="东语学院">东语学院</option><option value="英文学院">英文学院</option><option value="艺术学院">艺术学院</option><option value="实验教学中心">实验教学中心</option><option value="经贸学院">经贸学院</option><option value="法学院">法学院</option><option value="新闻学院">新闻学院</option><option value="翻译学院">翻译学院</option><option value="财经学院">财经学院</option><option value="教育学院">教育学院</option><option value="政管学院">政管学院</option><option value="西语学院">西语学院</option><option value="管理学院">管理学院</option><option value="商英学院">商英学院</option><option value="中文学院">中文学院</option><option value="科研处">科研处</option><option value="教务处">教务处</option><option value="思政学院">思政学院</option><option value="就业指导中心">就业指导中心</option><option value="学生处">学生处</option><option value="留学生院">留学生院</option><option value="团委">团委</option><option value="会计学院">会计学院</option><option value="财务处">财务处</option><option value="金融学院">金融学院</option><option value="商学院">商学院</option></select>
+    </td>
+    
+     <td>学号:<input value="" name="s2_id" id="project_name" style="width:150px;" type="text"></td>
+    
+    
+    
+    <td>
+										年级: <select name="s2_grade">
+											<option value=""></option>
+						  					<option value="2012">2012级</option>
+						  					<option value="2013">2013级</option>
+                                            <option value="2014">2014级</option>
+                                            <option value="2015">2015级</option>
+                                            <option value="2016">2016级</option>
+										</select>
+								</td>
+   
+                                
+   
+    </TR>
+    
+    
+    
+    <TR>
+    <td width="266">成员姓名: <input value="" name="s3_name" id="project_name" style="width:150px;" type="text"></td>
+    <td>学院: <select name="s3_department"><option value=""></option><option value="思科信息学院">思科信息学院</option><option value="东语学院">东语学院</option><option value="英文学院">英文学院</option><option value="艺术学院">艺术学院</option><option value="实验教学中心">实验教学中心</option><option value="经贸学院">经贸学院</option><option value="法学院">法学院</option><option value="新闻学院">新闻学院</option><option value="翻译学院">翻译学院</option><option value="财经学院">财经学院</option><option value="教育学院">教育学院</option><option value="政管学院">政管学院</option><option value="西语学院">西语学院</option><option value="管理学院">管理学院</option><option value="商英学院">商英学院</option><option value="中文学院">中文学院</option><option value="科研处">科研处</option><option value="教务处">教务处</option><option value="思政学院">思政学院</option><option value="就业指导中心">就业指导中心</option><option value="学生处">学生处</option><option value="留学生院">留学生院</option><option value="团委">团委</option><option value="会计学院">会计学院</option><option value="财务处">财务处</option><option value="金融学院">金融学院</option><option value="商学院">商学院</option></select>
+    </td>
+    
+     <td>学号:<input value="" name="s3_id" id="project_name" style="width:150px;" type="text"></td>
+    
+    
+    
+    <td>
+										年级: <select name="s3_grade">
+											<option value=""></option>
+						  					<option value="2012">2012级</option>
+						  					<option value="2013">2013级</option>
+                                            <option value="2014">2014级</option>
+                                            <option value="2015">2015级</option>
+                                            <option value="2016">2016级</option>
+										</select>
+								</td>
+   
+                                
+   
+    </TR>
+    
+    
+    
+    <TR>
+    <td width="266">成员姓名: <input value="" name="s4_name" id="project_name" style="width:150px;" type="text"></td>
+    <td>学院: <select name="s4_department"><option value=""></option><option value="思科信息学院">思科信息学院</option><option value="东语学院">东语学院</option><option value="英文学院">英文学院</option><option value="艺术学院">艺术学院</option><option value="实验教学中心">实验教学中心</option><option value="经贸学院">经贸学院</option><option value="法学院">法学院</option><option value="新闻学院">新闻学院</option><option value="翻译学院">翻译学院</option><option value="财经学院">财经学院</option><option value="教育学院">教育学院</option><option value="政管学院">政管学院</option><option value="西语学院">西语学院</option><option value="管理学院">管理学院</option><option value="商英学院">商英学院</option><option value="中文学院">中文学院</option><option value="科研处">科研处</option><option value="教务处">教务处</option><option value="思政学院">思政学院</option><option value="就业指导中心">就业指导中心</option><option value="学生处">学生处</option><option value="留学生院">留学生院</option><option value="团委">团委</option><option value="会计学院">会计学院</option><option value="财务处">财务处</option><option value="金融学院">金融学院</option><option value="商学院">商学院</option></select>
+    </td>
+    
+     <td>学号:<input value="" name="s4_id" id="project_name" style="width:150px;" type="text"></td>
+    
+    
+    
+    <td>
+										年级: <select name="s4_grade">
+											<option value=""></option>
+						  					<option value="2012">2012级</option>
+						  					<option value="2013">2013级</option>
+                                            <option value="2014">2014级</option>
+                                            <option value="2015">2015级</option>
+                                            <option value="2016">2016级</option>
+										</select>
+								</td>
+   
+                                
+   
+    </TR>
+    
+    
+    
+    <TR>
+    <td width="266">成员姓名: <input value="" name="s5_name" id="project_name" style="width:150px;" type="text"></td>
+    <td>学院: <select name="s5_department"><option value=""></option><option value="思科信息学院">思科信息学院</option><option value="东语学院">东语学院</option><option value="英文学院">英文学院</option><option value="艺术学院">艺术学院</option><option value="实验教学中心">实验教学中心</option><option value="经贸学院">经贸学院</option><option value="法学院">法学院</option><option value="新闻学院">新闻学院</option><option value="翻译学院">翻译学院</option><option value="财经学院">财经学院</option><option value="教育学院">教育学院</option><option value="政管学院">政管学院</option><option value="西语学院">西语学院</option><option value="管理学院">管理学院</option><option value="商英学院">商英学院</option><option value="中文学院">中文学院</option><option value="科研处">科研处</option><option value="教务处">教务处</option><option value="思政学院">思政学院</option><option value="就业指导中心">就业指导中心</option><option value="学生处">学生处</option><option value="留学生院">留学生院</option><option value="团委">团委</option><option value="会计学院">会计学院</option><option value="财务处">财务处</option><option value="金融学院">金融学院</option><option value="商学院">商学院</option></select>
+    </td>
+    
+     <td>学号:<input value="" name="s5_id" id="project_name" style="width:150px;" type="text"></td>
+    
+    
+    
+    <td>
+										年级: <select name="s5_grade">
+											<option value=""></option>
+						  					<option value="2012">2012级</option>
+						  					<option value="2013">2013级</option>
+                                            <option value="2014">2014级</option>
+                                            <option value="2015">2015级</option>
+                                            <option value="2016">2016级</option>
+										</select>
+								</td>
+   
+                                
+   
+    </TR>
+    
+    
+    
+</TABLE>
+
+
+
+
+<table border="0" width="800" height="18"></table>
+
+<p>项目具体信息：</p>
+            
+                 <TABLE border="0" width="800" height="40">
+  <TR>
+  
+  <td width="10">
+  关键词:
+  </td>
+  
+    <td><input value="" name="project_key1" id="project_name" style="width:150px;" type="text">&nbsp;&nbsp;&nbsp;&nbsp;<input value="" name="project_key2" id="project_name" style="width:150px;" type="text">&nbsp;&nbsp;&nbsp;&nbsp;<input value="" name="project_key3" id="project_name" style="width:150px;" type="text"></td>
+
+</TR>
+
+
+
+<TR>  <td width="800" height="10">  </td>  </TR>    
+
+<TR>
+  
+<td width="10">
+  简介:
+  </td>
+  
+  <td>
+  <textarea name="project_info" cols="66" rows="3" value=""></textarea>
+  </td>
+  
+  <td width="800">
+  
+  </td>
+    
+</TR>    
+    
+</TABLE>
+
+
+
+
+
+<table border="0" width="800" height="25"></table>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="submit" value="    提交    " width="500" onclick="return check()">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="reset" value="    重填    ">
+
+
+
+            </form>
+            </div>
+            </div>     
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>

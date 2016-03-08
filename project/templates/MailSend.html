@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>邮件发送</title>
+    <link rel="stylesheet" href="../static/css/MailSend.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+     <script type="text/javascript">
+        function check() {
+             if(window.confirm('你确定发送吗?')){
+                 //alert("确定");
+                 return true;
+              }else{
+                 //alert("取消");
+                 return false;
+             }
+        }
+        function infomation() {
+             if(window.alert('本邮箱与学生老师注册绑定,管理员可以直接输入名字发送邮件,也可以群邮件,添加附件.除此,本邮箱有一个特色功能,管理员可以分别输入"项目申报审核评分","项目中期审核评分","项目结项审核评分",并在收件人中填上老师的名字,以及学院的类别,即可让选中的老师当上"项目申报审核"的评委老师,或"项目中期审核"的评委老师,"项目结项审核"的评委,相应的老师不仅能接收到邮件的通知,而且能登陆系统直接在网上评分.')){
+                 //alert("确定");
+                 return true;
+              }else{
+                 //alert("取消");
+                 return false;
+             }
+        }
+            </script>
+</head>
+
+
+
+<style type="text/css">
+.file-box{ position:relative;width:340px} 
+.txt{ height:22px; border:1px solid #cdcdcd; width:200px;border-right:none;} 
+.btn{ background-color:#FFF; border:1px solid #CDCDCD;height:26px; width:100px;} 
+.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }
+</style>
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1"><a href="{% url 'login' %}" ><input class="button1" name ="main" type="submit"    value="    " ></a></div>
+              <div id="ggg01-2"><a href="{% url 'Notice' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-3"><a href="{% url 'Projectshow' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-4"><a href="{% url 'News' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-5"><a href="{% url 'Download' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-6"><a href="{% url 'Achievement' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-7"><a href ="{% url 'Leavemessage' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+          </div>
+          
+          
+          <div id="ggg02">
+                
+                <div id="ggg02-Container">
+                
+                     <div id="ggg02-1"><p>欢迎您，{{ user }}</p></div>
+                     <div id="ggg02-2"><a href ="{% url 'ProjectAnalyse' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+                     <div id="ggg02-3"><a href="{% url 'CheckSituation' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+                     <div id="ggg02-4"><a href="{% url 'MailSend' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+                     <div id="ggg02-5"><a href="{% url 'Edition' %}" target="_blank"><input class="button1" type="button"value="    " ></a></div>
+                     <form action="" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-6"><input class="button1" type="submit"    value="    "name="logout" ></div>
+                     </form>
+
+                </div>
+                
+          </div>
+       </div>
+       
+       
+       
+       
+
+
+            <div id="hhh">
+            <div id="hhh-content">
+            <form id="myproject" enctype="multipart/form-data" method="post" action="">
+            
+            
+            <table border="0" width="800" height="15"></table>
+            
+                       
+            <p>邮件发送：&nbsp;&nbsp;<input type="button" id="info" onclick="infomation()"value="使用提示"></p>
+            
+              
+
+                 <TABLE border="0" width="800" height="45">
+  <TR>
+    <td width="70">收件人:</td><td><input value="" name="receiver" id="receiver" style="width:360px;" type="text"> <p1> （ " * " 分隔，如Quincy*Jack ）</p1> </td>
+    
+
+  </TR>
+  </TABLE>
+  
+  
+             <table border="0" width="800" height="25"></table>
+  
+  
+  <TABLE>
+  <tr>
+				
+        <td width="230">群发学院:
+					     						<select name="sending_department" id="sending_department" style="width:130px" >
+												<option value=""></option>
+					     											     							<option value="思科信息学院">思科信息学院</option>
+					     											     							<option value="教务处">教务处</option>
+					     											     							<option value="新闻学院">新闻学院</option>
+					     											     							<option value="东语学院">东语学院</option>
+					     											     							<option value="英文学院">英文学院</option>
+					     											     							<option value="艺术学院">艺术学院</option>
+					     											     							<option value="经贸学院">经贸学院</option>
+					     											     							<option value="法学院">法学院</option>
+					     											     							<option value="翻译学院">翻译学院</option>
+					     											     							<option value="财经学院">财经学院</option>
+					     											     							<option value="教育学院">教育学院</option>
+					     											     							<option value="政管学院">政管学院</option>
+					     											     							<option value="西语学院">西语学院</option>
+					     											     							<option value="管理学院">管理学院</option>
+					     											     							<option value="商英学院">商英学院</option>
+					     											     							<option value="中文学院">中文学院</option>
+					     											     							<option value="科研处">科研处</option>
+					     											     							<option value="思政学院">思政学院</option>
+					     											     							<option value="学生处">学生处</option>
+					     											     							<option value="实验教学中心">实验教学中心</option>
+					     											     							<option value="团委">团委</option>
+					     											     							<option value="就业指导中心">就业指导中心</option>
+					     											     							<option value="留学生院">留学生院</option>
+					     											     							<option value="财务处">财务处</option>
+					     											     							<option value="商学院">商学院</option>
+					     											     							<option value="会计学院">会计学院</option>
+					     											     							<option value="金融学院">金融学院</option>
+					     											     						</select>
+					     		</td>
+                                
+                                
+       
+      <td>
+      
+      
+      
+  <INPUT TYPE="checkbox" NAME="check_student" value ="s">
+  学生
+  <INPUT TYPE="checkbox" NAME="check_teacher" value ="t">
+  老师
+  
+       
+      </td>                         
+                                
+				
+  </tr>
+  
+  </TABLE>
+  
+
+
+
+<table border="0" width="800" height="30"></table>
+
+
+
+<TABLE border="0" width="800" height="40">
+  <TR>
+    <td width="70">主题:</td><td><input value="" name="title" id="title" style="width:500px;" type="text"> <p1> </p1> </td>
+    
+
+  </TR>
+  </TABLE>
+
+
+
+<table border="0" width="800" height="20"></table>            
+            
+            
+            
+<TABLE border="0" width="800" height="40">
+<TR>
+  <td width="10">
+  发送内容:
+  </td>
+</TR>
+
+
+<TR>
+  
+  <td>
+  <textarea name="sending_message" cols="66" rows="10"></textarea>
+  </td>
+  
+  <td width="800">
+  
+  </td>
+    
+</TR>    
+    
+</TABLE>
+
+
+
+<table border="0" width="800" height="28"></table>
+
+            
+<TABLE border="0" width="800" height="45">
+  
+  <tr>
+	    <td width:"30">附件:</td>
+        <td><div class="file-box"> 
+    
+        <input type='text' name='textfield' id='textfield' class='txt' /><input type='button'  value='浏览...' />
+        <input type="file" name="sending_file" class="file" id="sending_file" value="" size="28" onChange="document.getElementById('textfield').value=this.value" />
+   
+         </div></td>
+								
+  </tr>
+                                
+                                
+</TABLE>
+            
+            
+      
+
+<table border="0" width="800" height="25"></table>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="submit" value="    发送    " width="500" onclick="return check()">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="reset" value="    重填    ">
+
+
+
+            </form>
+            </div>
+            </div>     
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>

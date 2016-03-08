@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<h1>系统自动审核</h1>
+<body>
+    <form id="" enctype="multipart/form-data" method="post" action="">
+    <input type="file" name="fileField" class="file" id="fileField" size="28" />
+    <input type="submit"  value="checkPDF" name="checkPDF" />
+    </form>
+    {% if checklist %}
+        <h2>审阅结果:</h2>
+        {% for li in checklist %}
+            <p>{{ li }}</p>
+        {% endfor %}
+    {% endif %}
+    <p></p>
+    <a href="{% url 'student' %}">点此返回</a>
+</body>
+</html>

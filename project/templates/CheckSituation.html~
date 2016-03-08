@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>审核情况</title>
+
+<link rel="stylesheet" href="../static/css/TeacherMarkingSituation02.css">
+
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<link href='../static/css/TeacherMarking__css/css/jquery.tableui.css'  rel="stylesheet" type="text/css"/>
+
+
+<script type="text/javascript" src="../static/css/TeacherMarking__css/js/jquery.js"></script>
+<script type="text/javascript" src="../static/css/TeacherMarking__css/js/jquery.tableui.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".table_solid").tableUI();
+});
+</script>
+
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+              <div id="ggg01-1"><input class="button1" type="submit"    value="    " ></div></form>
+              <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+              <div id="ggg01-2"><input class="button1" type="submit"    value="    " ></div></form>
+              <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+              <div id="ggg01-3"><input class="button1" type="submit"    value="    " ></div></form>
+              <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+              <div id="ggg01-4"><input class="button1" type="submit"    value="    " ></div></form>
+              <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+              <div id="ggg01-5"><input class="button1" type="submit"    value="    " ></div></form>
+              <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+              <div id="ggg01-6"><input class="button1" type="submit"    value="    " ></div></form>
+              <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+              <div id="ggg01-7"><input class="button1" type="submit"    value="    " ></div></form>
+          
+          </div>
+          
+          
+          <div id="ggg02">
+                
+                <div id="ggg02-Container">
+                
+                     <div id="ggg02-1"><p>欢迎您，张礼明</p></div>
+                     <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-2"><input class="button1" type="submit"    value="    " ></div></form>
+                     <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-3"><input class="button1" type="submit"    value="    " ></div></form>
+                     <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-4"><input class="button1" type="submit"    value="    " ></div></form>
+                     <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-5"><input class="button1" type="submit"    value="    " ></div></form>
+                     <form action="TeacherMarkingSituation.html" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-6"><input class="button1" type="submit"    value="    " ></div></form>
+                
+                
+                </div>
+                
+          </div>
+       </div>
+       
+       
+       
+       
+            
+            
+            <div id="hhh">
+            
+            
+            <div id="hhh-header">
+            <form id="myproject" enctype="multipart/form-data" method="post" action="TeacherMarkingSituation.html">
+            
+            
+               <div id="hhh-header-1"> 
+                  <table border="0" width="200" height="35"></table> 
+                  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;审核情况：</p>
+                  <table border="0" width="200" height="25"></table>
+               </div>
+               
+               
+               <div id="hhh-header-2">
+                 <TABLE border="0" width="353" height="50">
+                    <TR>
+                       <TD width="125">选择学院:</TD>
+                       <td>
+					     						<select name="project_department" id="project_department" style="width:150px" >
+												<option></option>
+					     											     							<option value="思科信息学院">思科信息学院</option>
+					     											     							<option value="教务处">教务处</option>
+					     											     							<option value="新闻学院">新闻学院</option>
+					     											     							<option value="东语学院">东语学院</option>
+					     											     							<option value="英文学院">英文学院</option>
+					     											     							<option value="艺术学院">艺术学院</option>
+					     											     							<option value="经贸学院">经贸学院</option>
+					     											     							<option value="法学院">法学院</option>
+					     											     							<option value="翻译学院">翻译学院</option>
+					     											     							<option value="财经学院">财经学院</option>
+					     											     							<option value="教育学院">教育学院</option>
+					     											     							<option value="政管学院">政管学院</option>
+					     											     							<option value="西语学院">西语学院</option>
+					     											     							<option value="管理学院">管理学院</option>
+					     											     							<option value="商英学院">商英学院</option>
+					     											     							<option value="中文学院">中文学院</option>
+					     											     							<option value="科研处">科研处</option>
+					     											     							<option value="思政学院">思政学院</option>
+					     											     							<option value="学生处">学生处</option>
+					     											     							<option value="实验教学中心">实验教学中心</option>
+					     											     							<option value="团委">团委</option>
+					     											     							<option value="就业指导中心">就业指导中心</option>
+					     											     							<option value="留学生院">留学生院</option>
+					     											     							<option value="财务处">财务处</option>
+					     											     							<option value="商学院">商学院</option>
+					     											     							<option value="会计学院">会计学院</option>
+					     											     							<option value="金融学院">金融学院</option>
+					     											     						</select>
+					     		</td>
+    
+                    </TR>
+                    
+                    <TR height="10"></TR>
+  
+                    <TR>
+                    <TD>选择项目状态:</TD>
+                    <td>
+					     						<select name="project_status" id="project_status" style="width:150px" >
+												<option></option>
+					     											     							<option value="申报待审核">申报待审核</option>
+					     											     							<option value="申报通过">申报通过</option>
+					     											     							<option value="中期待审核">中期待审核</option>
+					     											     							<option value="中期通过">中期通过</option>
+					     											     							<option value="结项待审核">结项待审核</option>
+					     											     							<option value="结项通过">结项通过</option>
+					     			
+					     											     						</select>
+					     		</td>
+    
+                    </TR>
+  
+                 </TABLE>
+               </div>
+               
+               
+               <div id="hhh-header-3"> 
+                   <table border="0" width="800" height="32"></table>
+
+&nbsp;&nbsp;&nbsp;<INPUT type="submit" value="    查看    " width="500">   
+               
+               </div>
+               
+            </form>
+            </div>
+            
+            
+            
+            
+            <div id="hhh-content">
+            <form id="teacher_marking" enctype="multipart/form-data" method="post" action="TeacherMarkingSituation.html">
+            
+            
+
+<table class="table_solid" border="0" cellspacing="0">
+	<tr>
+		<th>项目名称</th>
+		<th>评分</th>
+		<th>是否通过</th>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td width="70"><input value="" name="score_001" id="score_001" style="width:50px;" type="text"></td>
+		<td width="320"><input value="" name="pass_001" id="pass_001" style="width:100px;" type="text"></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_002" id="score_002" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_002" id="pass_002" style="width:100px;" type="text"></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_003" id="score_003" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_003" id="pass_003" style="width:100px;" type="text"></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_004" id="score_004" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_004" id="pass_004" style="width:100px;" type="text"></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_005" id="score_005" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_005" id="pass_005" style="width:100px;" type="text"></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_006" id="score_006" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_006" id="pass_006" style="width:100px;" type="text"></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_007" id="score_007" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_007" id="pass_007" style="width:100px;" type="text"></td>
+	</tr>
+	<tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_008" id="score_008" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_008" id="pass_008" style="width:100px;" type="text"></td>
+	</tr>
+    <tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_009" id="score_009" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_009" id="pass_009" style="width:100px;" type="text"></td>
+	</tr>
+    <tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_010" id="score_010" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_010" id="pass_010" style="width:100px;" type="text"></td>
+	</tr>
+    <tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_011" id="score_011" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_011" id="pass_011" style="width:100px;" type="text"></td>
+	</tr>
+    <tr>
+		<td><a href="./TeacherMarkingSituation_Reader.html">基于DOM模型扩展的Web信息提取</a></td>
+		<td><input value="" name="score_012" id="score_012" style="width:50px;" type="text"></td>
+		<td><input value="" name="pass_012" id="pass_012" style="width:100px;" type="text"></td>
+	</tr>
+</table>
+
+
+            </div>
+            
+            
+            <table border="0" width="800" height="5"></table>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="submit" value="    修改审核情况    " width="500">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="reset" value="    重填    ">
+            
+            
+            </div>     </form>
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>
+
+

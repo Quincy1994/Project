@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>项目分析</title>
+    <link rel="stylesheet" href="../static/css/ProjectAnalyse02.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+   
+ <!-- <link rel="shortcut icon" href="../static/css/Notice__css/images/favicon.ico">  -->
+ <!-- <link rel="icon" href="../static/css/Notice__css/images/favicon.ico">  -->
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/Notice__css/styles.css">
+  <script type="text/javascript" src="../static/css/Notice__css/jquery.min.js"></script>
+  <script type="text/javascript" src="../static/css/Notice__css/jsinput.js"></script>
+   
+</head>
+
+<style type="text/css">
+.file-box{ position:relative;width:340px} 
+.txt{ height:22px; border:1px solid #cdcdcd; width:200px;border-right:none;} 
+.btn{ background-color:#FFF; border:1px solid #CDCDCD;height:26px; width:100px;} 
+.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }
+</style>
+
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1">  <div id="ggg01-1-Notice">  </div>  </div>
+              
+              
+              
+              <div id="ggg01-2">
+                 <div id="ggg01-2-Form">
+                 
+                    
+                    
+                    
+                 </div>   
+              </div>
+              
+              <div id="ggg01-3"> 
+                 <div id="ggg01-3-Button">
+                    
+                 </div>       
+              </div>
+              
+              
+
+          </div>
+          
+          
+          <div id="ggg02">
+                
+          </div>
+          
+          
+          
+       </div>
+       
+       
+            <div id="hhh">
+            <div id="hhh-content">
+            
+                 
+                  <p1>{{ projectInfo.0 }}</p1>
+
+                  <table border="0" width="720">
+                      
+                      <tr height="20"> <td></td></tr>
+                      
+                      <tr height="50"> 
+                         <td width="200"><p2>项目关键字：</p2></td>
+                         
+                         <td><p3>{{ projectInfo.2 }}</p3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             <p3>{{ projectInfo.3 }}</p3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             <p3>{{ projectInfo.4 }}</p3></td>
+                      </tr>
+                      
+                      <tr height="50"> 
+                         <td width="200"><p2>项目简介：</p2></td>
+                         
+                         <td><p3>{{ projectInfo.5 }}</p3></td>
+                      </tr>
+                      
+                      <tr height="50"> 
+                         <td width="200"><p2>项目情况：</p2></td>
+                         <td><p>{% if projectInfo.6 %}<a href ="{{ projectInfo.6 }}">项目申报材料</a>{% endif %}</p></td>
+                      </tr>
+                      <tr height="50">
+                         <td width="200"><p2>项目情况：</p2></td>
+                         <td><p>{% if projectInfo.7 %}<a href ="{{ projectInfo.7 }}">项目中期材料</a>{% endif %}</p></td>
+                      </tr>
+                      <tr height="50">
+                         <td width="200"><p2>项目情况：</p2></td>
+                          <td><p>{% if projectInfo.8 %}<a href ="{{ projectInfo.8 }}">项目结项材料</a>{% endif %}</p></td>
+                      </tr>
+                      <tr height="50"></tr>
+
+                  </table>
+                  
+                  
+                  <table border="0" width="720">
+                      <p>检查结果:</p>
+                      {% for projectName,similar in nameSimiar.items %}
+                      <tr height="50">
+                         <td width="50"><p2>主题:</p2></td>
+                         <td width="650"><p2>与项目</p2> <p4>{{ projectName }}</p4> <p2> 的相似度情况：</p2></td>
+                         <td width="10"> </td>
+                         <td width="120"><p3>{{ similar }}</p3></td>
+                      </tr>
+                      {% endfor %}
+                      <tr height="20"> <td></td></tr>
+                      {% for projectName,similar in applySimilar.items %}
+                      <tr height="50">
+                         <td width="50"><p2>申报:</p2></td>
+                         <td width="650"><p2>与项目</p2> <p4>{{ projectName }}</p4> <p2> 的相似度情况：</p2></td>
+                         <td width="10"> </td>
+                         <td width="120"><p3>{{ similar }}</p3></td>
+                      </tr>
+                      {% endfor %}
+                      <tr height="20"> <td></td></tr>
+                      {% for projectName,similar in midSimilar.items %}
+                      <tr height="50">
+                         <td width="50"><p2>中期:</p2></td>
+                         <td width="650"><p2>与项目</p2> <p4>{{ projectName }}</p4> <p2> 的相似度情况：</p2></td>
+                         <td width="10"> </td>
+                         <td width="120"><p3>{{ similar }}</p3></td>
+                      </tr>
+                      {% endfor %}
+                      <tr height="20"> <td></td></tr>
+                      {% for projectName,similar in endSimilar.items %}
+                      <tr height="50">
+                         <td width="50"><p2>结项:</p2></td>
+                         <td width="650"><p2>与项目</p2> <p4>{{ projectName }}</p4> <p2> 的相似度情况：</p2></td>
+                         <td width="10"> </td>
+                         <td width="120"><p3>{{ similar }}</p3></td>
+                      </tr>
+                      {% endfor %}
+                  </table>
+
+
+
+            </div>
+            </div>     
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>

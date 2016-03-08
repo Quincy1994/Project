@@ -1,0 +1,10 @@
+@charset "utf-8";
+.evenRow{background-color:#F7FDEA;}
+.oddRow{background-color:#FFFFFF;}
+.activeRow{background-color:#FFFF99;}
+.clickRow{background-color:#CCCCFF;}
+*{margin:0;padding:0;}
+body{}
+.table_solid{border-bottom:1px solid #CCCCCC;border-right:1px solid #CCCCCC;position:relative;width:850px;margin:20px auto;text-align:center;}
+.table_solid th,.table_solid td{border-left:1px solid #CCCCCC;border-top:1px solid #CCCCCC;color:#333333;padding:0.5em;text-align:center;}
+.table_solid th{background-color:#DFF9FF;}

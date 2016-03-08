@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学生注册</title>
+    <link rel="stylesheet" href="../static/css/register.css">
+    
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+{#    function validatePWD()#}
+{#    {#}
+{#        var txtPwd = $("#password1");#}
+{#        var txtPwd2 = $("#Password2");#}
+{#        if(txtPwd.val()!=txtPwd2.val()){#}
+{#            $("#PwdConfigure").text("password is not same!").css({"font-size":"12px","color":"red"})#}
+{#        }#}
+{#        else {#}
+{#            $("#PwdConfigure".text("correct").css({"font-size":"12px","color":"green"})#}
+{#        }#}
+{#    }#}
+        function check(){
+            var passwd = document.getElementById("password1").value;
+            var repasswd = document.getElementById("password2").value;
+            var id =document.getElementById("sid").value;
+            var name = document.getElementById("name").value;
+            var usertype =document.getElementById("usertype").value;
+            var college  = document.getElementById("college").value;
+            var grade = document.getElementById("grade").value;
+            var title = document.getElementById("title").value;
+            var mail = document.getElementById("mail").value;
+            var phone =document.getElementById("phone").value;
+            if ((grade.length == 0)&& (usertype != 1)){
+                window.alert("信息未完整,请补全")
+                return false;
+            }
+            if ((passwd.length == 0 )&& (id.length == 0) && (name.length == 0) && (usertype.length == 0) && (college.length == 0) && (mail.length == 0 )&&( phone.length == 0)){
+                window.alert("信息未完整,请补全.")
+                return false;
+            }
+            if(passwd == repasswd){
+                return true;
+            }else{
+                window.alert("两次输入密码不一致");
+                return false;
+            }
+            }
+    </script>
+    <script type="text/javascript">
+    function disp_alert()
+    {
+        alert(" 学生老师可通过注册后实现登路.\n\n\n 管理员只能登陆和后台修改,不能自行注册.")
+    }
+    </script>
+</head>
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+         <div id="ggg01">
+              <div id="ggg01-1"><a href="{% url 'login' %}" ><input class="button1" name ="main" type="submit"    value="    " ></a></div>
+              <div id="ggg01-2"><a href="{% url 'Notice' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-3"><a href="{% url 'Projectshow' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-4"><a href="{% url 'News' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-5"><a href="{% url 'Download' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-6"><a href="{% url 'Achievement' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-7"><a href ="{% url 'Leavemessage' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+          </div>
+          
+          
+          <div id="ggg02">
+               <form action="" method="post" enctype="multipart/form-data">
+              <div id="ggg02-1"> <label> 登陆 </label> </div>
+              <div id="ggg02-2"><input value="" name="username" id="project_name" style="width:130px;" type="text" class="text1"></div>
+              <div id="ggg02-3"><input value="" name="password" id="project_name" style="width:130px;" type="password" class="text1"></div>
+              <div id="ggg02-4"><input class="button0" name="returnLogin" type="submit"    value="    " ></div>
+              <div id="ggg02-5">类别:
+				 <select name="variety" style="width:100px;">
+				       <option> </option>
+					   <option value="1">学生</option>
+				 		<option value="2">老师</option>
+						<option value="3">管理员</option>
+				 </select>        </div>
+              <div id="ggg02-6"><input class="button0" type="button"    value="    " ></div>
+              <div id="ggg02-7"><input class="button0" type="button"    value="    " onclick="disp_alert()"  ></div>
+            </form>
+          </div>
+          
+          
+       </div>
+       
+            <div id="hhh">
+            <div id="hhh-content">
+            <form id="myproject" enctype="multipart/form-data" method="post" action="">
+            
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学生 / 教师 注册界面：</p>
+            
+            
+            
+            
+            
+                 <TABLE border="0" width="353" height="500">
+  <TR>
+    <TD>姓名:</TD>
+    <TD><input value="" name="name" id="name" style="width:180px;" type="text"></TD>
+    
+  </TR>
+                     <div id ="PwdConfigure"></div>
+  <TR>
+    <TD>身份选择:</TD>
+    <TD><select name="userType" id ="usertype" style="width:100px;">
+		<option></option>
+		<option value="1">学生</option>
+		<option value="2">老师</option>
+		</select></TD>
+    
+  </TR>
+  <TR>
+    <TD>学工号:</TD>
+    <TD><input value="" name="id" id="sid" style="width:180px;" type="text"></TD>
+    
+  </TR>
+  <TR>
+    <TD>密码:</TD>
+    <TD><input value="" name="password" id="password1" style="width:180px;" type="password"></TD>
+    
+  </TR>
+  <TR>
+    <TD>密码确认:</TD>
+    <TD><input value="" name="passwordConfigure" id="password2" style="width:180px;" type="password" ></TD>
+  </TR>
+  <TR>
+    <TD>学院: </TD>
+    <TD><select name="department" id ="college"><option></option><option value="思科信息学院">思科信息学院</option><option value="教务处">教务处</option><option value="新闻学院">新闻学院</option><option value="东语学院">东语学院</option><option value="英文学院">英文学院</option><option value="艺术学院">艺术学院</option><option value="经贸学院">经贸学院</option><option value="法学院">法学院</option><option value="翻译学院">翻译学院</option><option value="财经学院">财经学院</option><option value="教育学院">教育学院</option><option value="政管学院">政管学院</option><option value="西语学院">西语学院</option><option value="管理学院">管理学院</option><option value="商英学院">商英学院</option><option value="中文学院">中文学院</option><option value="科研处">科研处</option><option value="思政学院">思政学院</option><option value="学生处">学生处</option><option value="实验教学中心">实验教学中心</option><option value="团委">团委</option><option value="就业指导中心">就业指导中心</option><option value="留学生院">留学生院</option><option value="财务处">财务处</option><option value="商学院">商学院</option><option value="会计学院">会计学院</option><option value="金融学院">金融学院</option></select>
+</TD>
+    
+  </TR>
+  <TR>
+    <TD>年级: </TD>
+    <td><select name="grade" id="grade">
+		<option></option>
+		<option value="2012">2012级</option>
+		<option value="2013">2013级</option>
+        <option value="2014">2014级</option>
+        <option value="2015">2015级</option>
+        <option value="2016">2016级</option>
+		</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p1>[学生必填]</p1></td>
+  </TR>
+  <TR>
+    <TD>职称: </TD>
+    <TD><select name="title" id="title">
+		<option></option>
+		<option value="教授">教授</option>
+		<option value="副教授">副教授</option>
+        <option value="讲师">讲师</option>
+        <option value="辅导员">辅导员</option>
+		</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p1>[教师必填]</p1></TD>
+  </TR>
+  <TR>
+    <TD>邮箱:</TD>
+    <TD><input value="" name="mail" id="mail" style="width:180px;" type="text"></TD>
+    
+  </TR>
+  <TR>
+    <TD>联系电话:</TD>
+    <TD><input value="" name="phone" id="phone" style="width:180px;" type="text"></TD>
+    
+  </TR>
+  
+</TABLE>
+            
+            
+  
+  
+  </TABLE>
+  
+
+
+
+<table border="0" width="800" height="25"></table>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="submit" value="    提交    " width="500" onclick="return check()">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="reset" value="    重填    ">
+
+
+
+            </form>
+            </div>
+            </div>     
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>

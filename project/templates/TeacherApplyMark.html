@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>老师申报审核评分</title>
+
+<link rel="stylesheet" href="../static/css/TeacherMarking.css">
+
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<link href='../static/css/TeacherMarking__css/css/jquery.tableui.css'  rel="stylesheet" type="text/css"/>
+
+
+<script type="text/javascript" src="../static/css/TeacherMarking__css/js/jquery.js"></script>
+<script type="text/javascript" src="../static/css/TeacherMarking__css/js/jquery.tableui.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".table_solid").tableUI();
+});
+</script>
+<script type="text/javascript">
+function sure() {
+            {
+              if(window.confirm('您的意见将会发到对应的项目负责人上,你确定保存吗?')){
+                 //alert("确定");
+                 return true;
+              }else{
+                 //alert("取消");
+                 return false;
+             }
+            }
+        }
+</script>
+    <script type="text/javascript">
+function handout() {
+            {
+              if(window.confirm('您提交后,就不能修改,您确定提交吗?')){
+                 //alert("确定");
+                 return true;
+              }else{
+                 //alert("取消");
+                 return false;
+             }
+            }
+        }
+    </script>
+</head>
+
+
+
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1"><a href="{% url 'login' %}"><input class="button1" name ="main" type="submit"    value="    " ></a></div>
+              <div id="ggg01-2"><a href="{% url 'Notice' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-3"><a href="{% url 'Projectshow' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-4"><a href="{% url 'News' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-5"><a href="{% url 'Download' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-6"><a href="{% url 'Achievement' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-7"><a href ="{% url 'Leavemessage' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+          </div>
+          
+          <div id="ggg02">
+                
+                <div id="ggg02-Container">
+                
+                     <form action="" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-1"><p>欢迎您,{{ user }}</p></div>
+                     <div id="ggg02-2"><a href="{% url 'TeacherApplyMark' %}" ><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-3"><a href="{% url 'TeacherMidMark' %}" ><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-4"><a href="{% url 'TeacherEndMark' %}" ><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-5"><a href ="{% url 'Edition__Teacher' %}"><input class="button1" type="button"    value="    " ></a></div>
+                     <div id="ggg02-6"><input class="button0" name="logout" type="submit"    value="    " ></div>
+                    </form>
+                
+                </div>
+                
+          </div>
+       </div>
+       
+       
+       
+       
+            
+{#            <form id="teacher_marking" enctype="multipart/form-data" method="post" action="">#}
+            <div id="hhh">
+            
+            
+            <div id="hhh-header">
+               <table border="0" width="800" height="25"></table> 
+               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;老师申报审核评分:</p>
+               <table border="0" width="800" height="25"></table>
+            </div>
+            
+            <div id="hhh-content">
+            
+            
+
+<table class="table_solid" border="0" cellspacing="0">
+	<tr>
+		<th>项目名称</th>
+		<th>评分</th>
+		<th>意见</th>
+        <th>保存</th>
+	</tr>
+    {% for project,value in ProjectMarks.items%}
+        <tr>
+		<td width="400"><form method="post"><button type="submit" class="button1" name="project" value="{{ forloop.counter }}" >{{ project }}</button></form></td>
+		<form method="post">
+            <td width="70"><input value="{{ value }}" name="{{ project }}" id="{{ project }}" style="width:50px;" type="text"></td>
+		    <td width="200"><textarea value="" name="TextArea" id="TextArea" cols="30" rows="2"></textarea></td>
+            <td width="60"><button type="submit" name="MarkSubmit" value="{{ forloop.counter }}" onclick="return sure()">save</button>
+	    </form>
+        </tr>
+    {% endfor %}
+</table>
+
+
+            </div>
+            
+            
+            <table border="0" width="800" height="5"></table>
+            <form method="post">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit"  name="finished" value="1"width="500" onclick="return handout()">&nbsp;&nbsp;&nbsp;提交&nbsp;&nbsp;&nbsp;</button>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="reset" value="    重填    ">
+            </form>
+            
+            </div>
+            
+{#    </form>#}
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>
+
+

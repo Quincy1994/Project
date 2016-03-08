@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>审核情况</title>
+
+<link rel="stylesheet" href="../static/css/CheckSituation.css">
+
+   <link rel="stylesheet" href="../static/bootstrap-3.3.5/css/bootstrap.min.css">
+   <script src="../static/js/jquery.min.js"></script>
+   <script src="../static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<link href='../static/css/TeacherMarking__css/css/jquery.tableui.css'  rel="stylesheet" type="text/css"/>
+
+
+<script type="text/javascript" src="../static/css/TeacherMarking__css/js/jquery.js"></script>
+<script type="text/javascript" src="../static/css/TeacherMarking__css/js/jquery.tableui.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".table_solid").tableUI();
+});
+</script>
+<script type="text/javascript">
+function handout() {
+            {
+              if(window.confirm('提交后就不能修改,您确定提交吗?')){
+                 //alert("确定");
+                 return true;
+              }else{
+                 //alert("取消");
+                 return false;
+             }
+            }
+        }
+</script>
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+    <div id="container">
+    
+    <div id="header">
+       <div id="eee">
+          <div id="eee01"></div>
+       </div>     
+       <div id="fff">
+          <div id="fff01"></div>
+       </div>
+    <br class="clearfloat"/>
+    </div>
+    
+    <div id="mainContent">
+       <div id="ggg">
+          <div id="ggg01">
+              <div id="ggg01-1"><a href="{% url 'login' %}" ><input class="button1" name ="main" type="submit"    value="    " ></a></div>
+              <div id="ggg01-2"><a href="{% url 'Notice' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-3"><a href="{% url 'Projectshow' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-4"><a href="{% url 'News' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-5"><a href="{% url 'Download' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-6"><a href="{% url 'Achievement' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+              <div id="ggg01-7"><a href ="{% url 'Leavemessage' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+          </div>
+          
+          
+          <div id="ggg02">
+                
+                <div id="ggg02-Container">
+                
+                     <div id="ggg02-1"><p>欢迎您，{{ user }}</p></div>
+                     <div id="ggg02-2"><a href ="{% url 'ProjectAnalyse' %}"  target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+                     <div id="ggg02-3"><a href="{% url 'CheckSituation' %}"  target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+                     <div id="ggg02-4"><a href="{% url 'MailSend' %}" target="_blank"><input class="button1" type="submit"    value="    " ></a></div>
+                     <div id="ggg02-5"><a href="{% url 'Edition' %}" target="_blank"><input class="button1" type="button"    value="    " ></a></div>
+                     <form action="" method="post" enctype="multipart/form-data">
+                     <div id="ggg02-6"><input class="button1" type="submit"    value="    "name="logout" ></div></form>
+                
+                </div>
+                
+          </div>
+       </div>
+       
+       
+       
+       
+            
+            
+            <div id="hhh">
+            
+            
+            <div id="hhh-header">
+            <form id="myproject" enctype="multipart/form-data" method="post" action="">
+            
+               <div id="hhh-header-1"> 
+                  <table border="0" width="200" height="35"></table> 
+                  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;审核情况：</p>
+                  <table border="0" width="200" height="25"></table>
+               </div>
+               
+               
+               <div id="hhh-header-2">
+                 <TABLE border="0" width="353" height="50">
+                    <TR>
+                       <TD width="125">选择学院:</TD>
+                       <td>
+					     						<select name="college" id="project_department" style="width:150px" >
+												{% if college %}<option value="{{ college }}">{{ college }}</option>{% endif %}
+                                                <option value=""></option>
+					     											     							<option value="思科信息学院">思科信息学院</option>
+					     											     							<option value="教务处">教务处</option>
+					     											     							<option value="新闻学院">新闻学院</option>
+					     											     							<option value="东语学院">东语学院</option>
+					     											     							<option value="英文学院">英文学院</option>
+					     											     							<option value="艺术学院">艺术学院</option>
+					     											     							<option value="经贸学院">经贸学院</option>
+					     											     							<option value="法学院">法学院</option>
+					     											     							<option value="翻译学院">翻译学院</option>
+					     											     							<option value="财经学院">财经学院</option>
+					     											     							<option value="教育学院">教育学院</option>
+					     											     							<option value="政管学院">政管学院</option>
+					     											     							<option value="西语学院">西语学院</option>
+					     											     							<option value="管理学院">管理学院</option>
+					     											     							<option value="商英学院">商英学院</option>
+					     											     							<option value="中文学院">中文学院</option>
+					     											     							<option value="科研处">科研处</option>
+					     											     							<option value="思政学院">思政学院</option>
+					     											     							<option value="学生处">学生处</option>
+					     											     							<option value="实验教学中心">实验教学中心</option>
+					     											     							<option value="团委">团委</option>
+					     											     							<option value="就业指导中心">就业指导中心</option>
+					     											     							<option value="留学生院">留学生院</option>
+					     											     							<option value="财务处">财务处</option>
+					     											     							<option value="商学院">商学院</option>
+					     											     							<option value="会计学院">会计学院</option>
+					     											     							<option value="金融学院">金融学院</option>
+					     											     						</select>
+					     		</td>
+    
+                    </TR>
+                    
+                    <TR height="10"></TR>
+  
+                    <TR>
+                    <TD>选择项目状态:</TD>
+                    <td>
+					     						<select name="p_status" id="project_status" style="width:150px" >
+                                                {% if p_status %}<option value="{{ p_status }}">{{ p_status }}</option>{% endif %}
+												<option></option>
+					     											     							<option value="申报待审核">申报待审核</option>
+					     											     							<option value="申报通过">申报通过</option>
+					     											     							<option value="中期待审核">中期待审核</option>
+					     											     							<option value="中期通过">中期通过</option>
+					     											     							<option value="结项待审核">结项待审核</option>
+					     											     							<option value="结项通过">结项通过</option>
+					     			
+					     											     						</select>
+					     		</td>
+    
+                    </TR>
+  
+                 </TABLE>
+               </div>
+               
+               
+               <div id="hhh-header-3"> 
+                   <table border="0" width="800" height="32"></table>
+
+&nbsp;&nbsp;&nbsp;<INPUT type="submit" name = "check" value="    查看    " width="500">
+               
+               </div>
+               
+            </form>
+            </div>
+            
+            
+            
+            
+
+
+            
+<div>
+<form id="teacher_marking" enctype="multipart/form-data" method="post" action="">
+    <div id="hhh-content">
+<table class="table_solid" border="0" cellspacing="0">
+	<tr>
+		<th>项目名称</th>
+		<th>评分</th>
+		<th>项目状态</th>
+	</tr>
+	<tr>
+
+        {% for project,marks in ProjectMarks.items %}
+            <td><p>{{ project }}</p></td>
+            <td width="70"><p>{{ marks }}</p></td>
+            <td width="320"><select name="{{ forloop.counter }}" id="project_status" style="width:150px" ><option value="{{ p_status }}">{{ p_status }}</option><option value="申报待审核">申报待审核</option><option value="申报通过">申报通过</option><option value="中期待审核">中期待审核</option><option value="中期通过">中期通过</option><option value="结项待审核">结项待审核</option><option value="结项通过">结项通过</option><option value="终止项目">终止项目</option></select></td>
+        {% endfor %}
+    </tr>
+
+</table>
+
+
+            </div>
+            
+            
+            <table border="0" width="800" height="5"></table>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit"  name="changed" value="1"width="500" onclick="return handout()">&nbsp;&nbsp;&nbsp;提交&nbsp;&nbsp;&nbsp;</button>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<INPUT type="reset" value="    重填    ">
+            
+            </form>
+</div>
+            </div>
+            
+            
+    <br class="clearfloat"/>   
+    </div>
+    
+    
+    <div id="footer"></div>
+    
+    </div>
+	
+
+
+
+
+</body>
+</html>
+
+
